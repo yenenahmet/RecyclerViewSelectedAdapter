@@ -21,7 +21,13 @@ android {
         }
     }
 }
-
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://maven.google.com" }
+        mavenCentral()
+    }
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
