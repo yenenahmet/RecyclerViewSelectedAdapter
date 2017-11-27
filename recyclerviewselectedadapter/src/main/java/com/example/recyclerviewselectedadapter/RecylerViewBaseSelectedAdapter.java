@@ -14,40 +14,12 @@ public abstract class RecylerViewBaseSelectedAdapter <T, E extends RecyclerView.
 
     private List<T> items;
     private List<Integer> SelectedList;
-    private View ClickView;
-    public OnLongListenerItem onLongListenerItem;
 
-    public void setClickView(View view){
-        this.ClickView = view ;
-    }
-    public interface OnLongListenerItem{
-        void onLongClick(int position);
-        void onClick(int position);
-    }
-    public void setOnLongListenerItem(OnLongListenerItem onLongListenerItem){
-        this.onLongListenerItem = onLongListenerItem;
-    }
     public RecylerViewBaseSelectedAdapter(){
         items = new ArrayList<>();
         SelectedList = new ArrayList<>();
     }
-    @Override
-    public void onBindViewHolder(E holder, final int position) {
 
-        ClickView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onLongListenerItem.onClick(position);
-            }
-        });
-        ClickView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                onLongListenerItem.onLongClick(position);
-                return true;
-            }
-        });
-    }
     @Override
     public int getItemCount() {
         return items.size();
