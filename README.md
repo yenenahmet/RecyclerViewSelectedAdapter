@@ -2,4 +2,4 @@
 Library recyclerAdapter for action mode
 
 
-1 )
+https://paste.ubuntu.com/26063308/
