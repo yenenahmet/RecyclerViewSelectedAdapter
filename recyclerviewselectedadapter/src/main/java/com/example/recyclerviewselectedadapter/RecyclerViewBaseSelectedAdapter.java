@@ -56,6 +56,7 @@ public abstract class RecyclerViewBaseSelectedAdapter <T, E extends RecyclerView
         for(Integer value:this.SelectedList) {
             tmp.add(getItem(value));
         }
+        Collections.sort(SelectedList);
         for(int i = this.SelectedList.size()-1; i>=0; i--){
             removeItem(SelectedList.get(i));
         }
