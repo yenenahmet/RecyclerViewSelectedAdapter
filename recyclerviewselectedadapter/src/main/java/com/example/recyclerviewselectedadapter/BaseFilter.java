@@ -48,8 +48,8 @@ public abstract class BaseFilter<T> extends Filter {
     protected void publishResults(CharSequence constraint, final FilterResults results) {
         synchronized (mLock) {
             if (results != null && results.values != null) {
-                final ArrayList<T> array = new ArrayList<>((ArrayList<T>)results.values);
-                pubslishResults( array);
+                final ArrayList<T> arrayList = new ArrayList<>((ArrayList<T>)results.values);
+                pubslishResults(arrayList);
             }
         }
     }
@@ -66,9 +66,23 @@ public abstract class BaseFilter<T> extends Filter {
         }
     }
 
-    public void setAllItems(List<T> items){
+    protected void setAllItems(List<T> items){
         if(items!=null){
+            clear();
             this.allItems = new ArrayList<>(items);
         }
+    }
+
+    protected T isContainsLower(final T model ,final String value ,final String constLowerCase){
+         if(value.toLowerCase().contains(constLowerCase)){
+             return model;
+         }
+         return null;
+    }
+    protected T isEqualsLower(final T model, final String value ,final String constLowerCase){
+        if(value.equals(constLowerCase)){
+            return model;
+        }
+        return null;
     }
 }
