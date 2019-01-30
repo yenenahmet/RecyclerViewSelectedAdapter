@@ -80,7 +80,7 @@ public abstract class BaseFilter<T> extends Filter {
          return null;
     }
     protected T isEqualsLower(final T model, final String value ,final String constLowerCase){
-        if(value.equals(constLowerCase)){
+        if(value.toLowerCase().equals(constLowerCase)){
             return model;
         }
         return null;
