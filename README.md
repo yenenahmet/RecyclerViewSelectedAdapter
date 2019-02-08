@@ -1,5 +1,13 @@
-# RecyclerViewSelectedAdapter
-Library recyclerAdapter for action mode
+# BaseRecyclerView
 
+* Simplification of filtering processes
 
-https://paste.ubuntu.com/26063308/
+* Simplification of swipe processes
+
+* Simplification of View Click processes
+
+* Simplification of pagination processes
+
+* Simplification of adapater processes 
+
+* Simplification of  selected processes
