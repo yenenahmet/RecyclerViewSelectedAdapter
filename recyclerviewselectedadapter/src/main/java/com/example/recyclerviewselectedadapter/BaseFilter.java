@@ -85,22 +85,20 @@ public abstract class BaseFilter<T> extends Filter {
         }
         return null;
     }
-	    public void removeItem(final int pos){
+    public void removeItem(final int pos){
         if(pos>-1 && !allItems.isEmpty()){
             allItems.remove(pos);
         }
     }
     public int getItemPosition(final T item){
         if(item!=null && !allItems.isEmpty()){
-            int i=0,pos=-1;
+            int i=0;
             for(T value:allItems){
                 if(item.equals(value)){
-                    pos=i;
-                    break;
+                    return i;
                 }
                 i++;
             }
-            return pos;
         }
         return -1;
     }
