@@ -104,8 +104,9 @@ public abstract class BaseFilter<T> extends Filter {
     }
     public int removeItem(final T item){
         if(item!=null && !allItems.isEmpty()){
+            final int pos = getItemPosition(item);
             allItems.remove(item);
-            return getItemPosition(item);
+            return pos;
         }
         return -1;
     }
